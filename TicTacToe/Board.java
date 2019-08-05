@@ -10,6 +10,14 @@ public class Board {
         }
     }
 
+    public boolean add(int i, int j, int id) {
+        if (board[i][j] == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public String toString() {
         String ans = "";
         for (int i = 0; i < board.length; i++) {
