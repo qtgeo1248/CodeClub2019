@@ -16,6 +16,13 @@ public class TicTacToe {
             line += "--|--|--\n";
             ans += line;
         }
+        /* prints out
+        XX|XX|XX
+        --|--|--
+        XX|XX|XX
+        --|--|--
+        XX|XX|XX
+        */
         System.out.println(ans.substring(0, ans.lastIndexOf("| ") + 1));
     }
 
