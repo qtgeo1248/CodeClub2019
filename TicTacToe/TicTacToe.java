@@ -21,6 +21,7 @@ public class TicTacToe {
 
     public static boolean add(int[][] board, int i, int j, int id) {
         if (board[i][j] == 0) {
+            board[i][j] = id;
             return true;
         } else {
             return false;
