@@ -25,5 +25,6 @@ public class Driver {
                 board[i][j] = 0;
             }
         }
+        printBoard(board);
     }
 }
