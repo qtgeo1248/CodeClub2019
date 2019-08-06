@@ -27,6 +27,12 @@ public class TicTacToe {
             return false;
         }
     }
+
+    public static int winner(int[][] board) {
+        int winner = 0;
+        return winner;
+    }
+
     public static void main(String[] args) {
         int[][] board = new int[3][3];
         for (int i = 0; i < board.length; i++) {
