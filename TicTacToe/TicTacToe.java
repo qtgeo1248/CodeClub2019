@@ -1,4 +1,4 @@
-public class Driver {
+public class TicTacToe {
     public static void printBoard(int[][] board) {
         String ans = "";
         for (int i = 0; i < board.length; i++) {
