@@ -18,6 +18,14 @@ public class TicTacToe {
         }
         System.out.println(ans.substring(0, ans.lastIndexOf("| ") + 1));
     }
+
+    public static boolean add(int[][] board, int i, int j, int id) {
+        if (board[i][j] == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public static void main(String[] args) {
         int[][] board = new int[3][3];
         for (int i = 0; i < board.length; i++) {
@@ -25,6 +33,5 @@ public class TicTacToe {
                 board[i][j] = 0;
             }
         }
-        printBoard(board);
     }
 }
