@@ -67,7 +67,5 @@ public class TicTacToe {
                 board[i][j] = 0;
             }
         }
-        int[][] test = {{0, 1, 2}, {0, 1, 2}, {0, 0, 2}};
-        System.out.println(winner(test));
     }
 }
