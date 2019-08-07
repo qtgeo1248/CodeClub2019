@@ -67,5 +67,10 @@ public class TicTacToe {
                 board[i][j] = 0;
             }
         }
+        int player = 1;
+        while (winner(board) == 0) {
+
+        }
+        System.out.println("Congradulations Player " + winner(board) + "!\nYou win!");
     }
 }
