@@ -37,6 +37,14 @@ public class TicTacToe {
 
     public static int winner(int[][] board) {
         int winner = 0;
+        //looking at 3inrows that go through center
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
+                if (j != 1 && i != 1 && board[i][j] == board[2 - i][2 - j] && board[i][j] == board[1][1]) {
+                    return board[1][1];
+                }
+            }
+        }
         return winner;
     }
 
