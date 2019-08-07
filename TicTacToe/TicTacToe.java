@@ -36,7 +36,6 @@ public class TicTacToe {
     }
 
     public static int winner(int[][] board) {
-        int winner = 0;
         //looking at 3inrows that go through center
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
@@ -45,7 +44,16 @@ public class TicTacToe {
                 }
             }
         }
-        return winner;
+        //checks 3inrows that go through corners but no the centers
+        if ((board[0][0] == board[0][1] && board[0][0] == board[0][2]) ||
+            (board[0][0] == board[1][0] && board[0][0] == board[2][0])) {
+            return board[0][0];
+        }
+        if ((board[2][2] == board[1][2] && board[2][2] == board[0][2]) ||
+            (board[2][2] == board[2][1] && board[2][2] == board[2][0])) {
+            return board[2][2];
+        }
+        return 0;
     }
 
     public static void main(String[] args) {
@@ -55,5 +63,6 @@ public class TicTacToe {
                 board[i][j] = 0;
             }
         }
+        
     }
 }
