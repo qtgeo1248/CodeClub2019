@@ -68,16 +68,18 @@ public class TicTacToe {
                 board[i][j] = 0;
             }
         }
-        printBoard(board);
-        int player = 1;
+        int player = 0;
         Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to Tic Tac Toe.\nPress any key to continue");
+        String key = input.nextLine();
         while (winner(board) == 0) {
-            System.out.println("Welcome to Tic Tac Toe.\nPress any key to continue");
-            String key = input.nextLine();
-            System.out.println("Player 1 (X) goes first.\nPick a square:");
+            printBoard(board);
+            System.out.println("Player " + (player + 1) + " goes.\nPick a square:");
             String square = input.nextLine();
             int i = 0; //1, 2, or 3
             int j = 0; //A, B, or C
+
+            //checks if the user input is in the correct format
             boolean isValid = true;
             if (square.contains("A")) {
                 j = 0;
@@ -87,7 +89,7 @@ public class TicTacToe {
                 j = 2;
             } else {
                 isValid = false;
-                System.out.println("Invalid input. Please try again");
+                System.out.println("Invalid input. Please try again.");
             }
             if (square.contains("1") && isValid) {
                 i = 0;
@@ -95,11 +97,20 @@ public class TicTacToe {
                 i = 1;
             } else if (square.contains("3") && isValid) {
                 i = 2;
-            } else {
+            } else if (isValid) {
                 isValid = false;
-                System.out.println("Invalid input. Please try again");
+                System.out.println("Invalid input. Please try again.");
+            }
+            //does the adding of the square
+            if (isValid) {
+                if (add(board, i, j, player + 1)) {
+                    player = (player + 1) % 2;
+                } else {
+                    System.out.println("There is already a cross there. Please try again.");
+                }
             }
         }
-        System.out.println("Congradulations Player " + winner(board) + "!\nYou win!");
+        printBoard(board);
+        System.out.println("\nCongradulations Player " + winner(board) + "!\nYou win!");
     }
 }
